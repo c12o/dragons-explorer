@@ -1,10 +1,9 @@
 import axios from "axios";
-import { dragonAPIURL } from "../config";
 
 export class DragonService {
-  constructor() {
+  constructor(baseURL) {
     this.http = axios.create({
-      baseURL: dragonAPIURL,
+      baseURL,
     });
   }
 
