@@ -1,44 +1,49 @@
-import { useState, createContext, useEffect, useContext } from "react";
-import { AuthenticationService } from "../services";
+import React, { useState, createContext, useEffect, useContext } from 'react'
+import PropTypes from 'prop-types'
+import { AuthenticationService } from 'services'
 
 const sessionContext = createContext({
   user: null,
-  login: (data) => {},
-  logout: () => {},
-});
+  login: () => {},
+  logout: () => {}
+})
 
 const SessionProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const AuthenticationAPI = new AuthenticationService();
+  const [user, setUser] = useState(null)
+  const AuthenticationAPI = new AuthenticationService()
 
   useEffect(() => {
     if (!user) {
-      const sessionData = AuthenticationAPI.getAuthenticatedUser();
-      sessionData && setUser(sessionData);
+      const sessionData = AuthenticationAPI.getAuthenticatedUser()
+      sessionData && setUser(sessionData)
     }
-  }, []);
+  }, [])
 
   function login(payload) {
     try {
-      const loginData = AuthenticationAPI.login(payload);
-      setUser(loginData);
+      const loginData = AuthenticationAPI.login(payload)
+      setUser(loginData)
     } catch (error) {
-      return error;
+      return error
     }
   }
 
   function logout() {
-    AuthenticationAPI.logout();
-    setUser(null);
+    AuthenticationAPI.logout()
+    setUser(null)
   }
 
   return (
     <sessionContext.Provider value={{ user, login, logout }}>
       {children}
     </sessionContext.Provider>
-  );
-};
+  )
+}
 
-const useSession = () => useContext(sessionContext);
+SessionProvider.propTypes = {
+  children: PropTypes.node.isRequired
+}
 
-export { useSession, SessionProvider };
+const useSession = () => useContext(sessionContext)
+
+export { useSession, SessionProvider }
