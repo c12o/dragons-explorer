@@ -1,16 +1,5 @@
 import { useState, createContext, useEffect, useContext } from "react";
-
-const LOCAL_STORAGE_IDENTIFIER = "@dragon-ui:authenticated-user";
-
-const _retrievePersistedData = () => {
-  return JSON.parse(localStorage.getItem(LOCAL_STORAGE_IDENTIFIER));
-};
-
-const _setDataToPersist = (data) =>
-  localStorage.setItem(LOCAL_STORAGE_IDENTIFIER, JSON.stringify(data));
-
-const _clearPersistedData = () =>
-  localStorage.removeItem(LOCAL_STORAGE_IDENTIFIER);
+import { AuthenticationService } from "../services";
 
 const sessionContext = createContext({
   user: null,
@@ -20,28 +9,27 @@ const sessionContext = createContext({
 
 const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const AuthenticationAPI = new AuthenticationService();
 
   useEffect(() => {
     if (!user) {
-      const sessionData = _retrievePersistedData();
+      const sessionData = AuthenticationAPI.getAuthenticatedUser();
       sessionData && setUser(sessionData);
     }
   }, []);
 
-  function login({ identifier, password, persistSession }) {
-    if (identifier === "daenaerys" && password === "dracarys") {
-      const userData = { name: "Daenerys Targaryen" };
-      setUser(userData);
-      persistSession && _setDataToPersist(userData);
-      return;
+  function login(payload) {
+    try {
+      const loginData = AuthenticationAPI.login(payload);
+      setUser(loginData);
+    } catch (error) {
+      return error;
     }
-
-    throw Error("Credenciais inválidas");
   }
 
   function logout() {
+    AuthenticationAPI.logout();
     setUser(null);
-    _clearPersistedData();
   }
 
   return (
