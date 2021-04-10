@@ -7,9 +7,3 @@ export default {
 }
 
 export const Basic = () => <Switch />
-
-Basic.args = {
-  placeholder: 'Usuário',
-  id: 'test-input',
-  required: true
-}
