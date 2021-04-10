@@ -1,0 +1,61 @@
+@import '../../styles/colors.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+@import '../../styles/breakpoints.scss';
+
+.navBar {
+  & > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 250px;
+
+    & > li {
+      list-style: none;
+      font-size: 16px;
+      font-weight: map-get($typography, 'bold');
+      text-transform: uppercase;
+      & > .link {
+        appearance: none;
+        text-decoration: none;
+        font-weight: inherit;
+        .dark-theme & {
+          color: map-get($colors, 'title-on-dark');
+        }
+        .light-theme & {
+          color: map-get($colors, 'title-on-light');
+        }
+      }
+
+      & > .logoutButton {
+        appearance: none;
+        background-color: transparent;
+        border: 0;
+        color: map-get($colors, 'primary');
+        font-size: inherit;
+        text-transform: inherit;
+        font-weight: inherit;
+        outline: none;
+      }
+
+      & > .logoutButton,
+      & > .link {
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        &:active {
+          color: inherit;
+        }
+      }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, 'mobile')) {
+      & {
+        flex-direction: row;
+        min-height: unset;
+      }
+    }
+  }
+}
