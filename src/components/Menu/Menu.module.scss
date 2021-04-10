@@ -1,0 +1,25 @@
+@import '../../styles/colors.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+@import '../../styles/breakpoints.scss';
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 20px 1fr;
+
+  & > button {
+    justify-self: flex-end;
+    max-width: 100px;
+  }
+
+  & > ul {
+    height: 100vh;
+  }
+}
