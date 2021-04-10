@@ -1,9 +1,8 @@
 @import '../../styles/colors.scss';
-@import '../../styles/spacing.scss';
 @import '../../styles/typography.scss';
 @import '../../styles/others.scss';
 
-.container {
+.inputContainer {
   display: inline-flex;
   position: relative;
   box-sizing: border-box;
@@ -52,7 +51,7 @@
       background-color: inherit;
       bottom: 30px;
       left: 8px;
-      font-weight: 500;
+      font-weight: map-get($typography, 'regular');
       font-size: 14px;
       pointer-events: unset;
       padding: 0 4px;

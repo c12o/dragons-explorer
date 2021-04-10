@@ -19,7 +19,7 @@ function Input({ id, placeholder, type, ...props }) {
     showPassword ? <HidePassword size="20" /> : <ShowPassword size="20" />
 
   return (
-    <div className={styles.container}>
+    <div className={styles.inputContainer}>
       <input
         id={id}
         className={styles[inputClass]}

@@ -1,0 +1,86 @@
+@import '../../styles/colors.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+
+.switchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+
+  & > svg {
+    transition: all map-get($others, 'fast-transition');
+    &.inactive {
+      &.dark-theme & {
+        color: map-get($colors, 'text-on-dark');
+      }
+
+      &.light-theme & {
+        color: map-get($colors, 'text-on-light');
+      }
+    }
+
+    &.active {
+      color: map-get($colors, 'primary');
+    }
+  }
+}
+
+.switch {
+  position: absolute;
+  visibility: hidden;
+
+  & + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+  }
+}
+
+.switchTrack {
+  & + label {
+    padding: 2px;
+    width: 60px;
+    height: 30px;
+    border-radius: 60px;
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      bottom: 1px;
+      content: '';
+    }
+    &:before {
+      right: 1px;
+      background-color: #f1f1f1;
+      border-radius: 60px;
+      transition: all 0.4s;
+      height: 95%;
+    }
+    &:after {
+      width: 30px;
+      background-color: #fff;
+      border-radius: 100%;
+
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+      transition: all map-get($others, 'fast-transition');
+    }
+  }
+
+  &:checked {
+    & + label {
+      &:before {
+        background-color: map-get($colors, 'primary');
+      }
+      &:after {
+        background-color: map-get($colors, 'primary-dark');
+        transform: translateX(30px);
+      }
+      background-color: map-get($colors, 'primary');
+    }
+  }
+}
