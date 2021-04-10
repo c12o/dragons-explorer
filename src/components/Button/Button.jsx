@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styles from './Button.module.scss'
 
 function Button({ children, type, onClick, disabled, variant }) {
-  console.log(styles)
   return (
     <button
       className={styles[variant]}

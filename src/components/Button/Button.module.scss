@@ -16,6 +16,7 @@
   transition: all map-get($others, 'fast-transition');
   font-weight: map-get($typography, 'bold');
   text-transform: uppercase;
+  max-width: 480px;
 
   &:disabled {
     cursor: not-allowed;
