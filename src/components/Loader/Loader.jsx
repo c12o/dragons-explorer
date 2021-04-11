@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import styles from './Loader.module.scss'
 
 function Loader({ primaryColor, ...props }) {
-  console.log(styles)
   return (
     <svg viewBox="25 25 50 50" className={styles.loader} {...props}>
       <circle
