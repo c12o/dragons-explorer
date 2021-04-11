@@ -18,7 +18,7 @@ function Button({ children, type, onClick, disabled, variant }) {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['button', 'submit']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['outlined', 'solid'])
 }

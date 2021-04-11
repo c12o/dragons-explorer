@@ -12,21 +12,20 @@ export class AuthenticationService {
   }
 
   login(payload) {
-    const { nickname, password, persistSession } = payload
+    const { nickname, password } = payload
 
     if (
       nickname === this.#authenticatedUser.nickname &&
       password === this.#authenticatedUser.password
     ) {
-      persistSession &&
-        localStorage.setItem(
-          this.#localStorageIdentifier,
-          JSON.stringify(this.#authenticatedUser)
-        )
+      localStorage.setItem(
+        this.#localStorageIdentifier,
+        JSON.stringify(this.#authenticatedUser)
+      )
 
       return this.#authenticatedUser
     } else {
-      throw Error({ message: 'Credenciais Inválidas' })
+      throw Error('Credenciais Inválidas')
     }
   }
 
