@@ -3,7 +3,7 @@
 @import '../../styles/typography.scss';
 @import '../../styles/others.scss';
 
-.button {
+@mixin button-styles {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .outlined {
-  @extend .button;
+  @include button-styles;
   color: map-get($colors, 'primary');
   border-color: map-get($colors, 'primary');
   background-color: transparent;
@@ -35,7 +35,7 @@
   }
 }
 .solid {
-  @extend .button;
+  @include button-styles;
   background-color: map-get($colors, 'primary');
   border-color: map-get($colors, 'primary');
 

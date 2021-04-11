@@ -18,11 +18,6 @@ function ListItem({ direction, dragon }) {
           onClick={() => {}}
         />
         <IconButton
-          icon={<Edit size={ICON_SIZE} />}
-          tooltipMessage="Editar dragão"
-          onClick={() => {}}
-        />
-        <IconButton
           icon={<Delete size={ICON_SIZE} />}
           tooltipMessage="Remover dragão"
           onClick={() => {}}

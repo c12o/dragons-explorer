@@ -1,7 +1,7 @@
 @import '../../styles/typography.scss';
 @import '../../styles/others.scss';
 
-.wrapper {
+@mixin wrapper {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -17,20 +17,20 @@
 }
 
 .row {
-  @extend .wrapper;
+  @include wrapper;
   max-width: 1000px;
   > .dragonName {
     flex: 1;
     padding-left: 8px;
   }
   > .buttonsWrapper {
-    flex: 1;
-    max-width: 160px;
+    flex: 0.5;
+    max-width: 120px;
   }
 }
 
 .column {
-  @extend .wrapper;
+  @include wrapper;
   flex-direction: column;
 
   height: 200px;

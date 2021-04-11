@@ -1,0 +1,55 @@
+@import '../../styles/colors.scss';
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@mixin rotateAnimation {
+  animation: rotate 2s linear infinite;
+}
+@mixin dashAnimation {
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+.loader {
+  max-width: 200px;
+  transform-origin: center center;
+  @include rotateAnimation;
+
+  & > circle {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    @include dashAnimation;
+
+    &.primary {
+      stroke: map-get($colors, 'primary');
+    }
+
+    &.regular {
+      .dark-theme & {
+        stroke: map-get($colors, 'surface-dark');
+      }
+      .light-theme & {
+        stroke: map-get($colors, 'surface-light');
+      }
+    }
+  }
+}
