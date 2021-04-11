@@ -1,0 +1,53 @@
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  > .dragonName {
+    font-size: 2rem;
+    font-weight: map-get($typography, 'bold');
+  }
+  > .buttonsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.row {
+  @extend .wrapper;
+  max-width: 1000px;
+  > .dragonName {
+    flex: 1;
+    padding-left: 8px;
+  }
+  > .buttonsWrapper {
+    flex: 1;
+    max-width: 160px;
+  }
+}
+
+.column {
+  @extend .wrapper;
+  flex-direction: column;
+
+  height: 200px;
+  width: 300px;
+
+  box-shadow: map-get($others, 'box-shadow');
+  border-radius: map-get($others, 'border-radius');
+
+  > svg {
+    flex: 0.5;
+  }
+
+  > .buttonsWrapper {
+    flex: 0.5;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

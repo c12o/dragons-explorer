@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Menu.module.scss'
 import { NavBar } from 'components'
-import IconButton from 'components/IconButton/IconButton'
+import { IconButton } from 'components'
 import { Close, Menu as MenuIcon } from 'assets/icons'
 
 function Menu() {
