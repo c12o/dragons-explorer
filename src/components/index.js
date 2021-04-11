@@ -7,6 +7,7 @@ import Header from './Header'
 import IconButton from './IconButton'
 import ListItem from './ListItem'
 import Logo from './Logo'
+import ToggleExhibitionListType from './ToggleExhibitionListType'
 
 export {
   Button,
@@ -17,5 +18,6 @@ export {
   Logo,
   Header,
   ListItem,
-  IconButton
+  IconButton,
+  ToggleExhibitionListType
 }
