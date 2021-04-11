@@ -8,10 +8,14 @@ function NavBar({ onClick }) {
     <nav className={styles.navBar} aria-hidden="true">
       <ul>
         <li>
-          <Link className={styles.link}>Cadastrar</Link>
+          <Link to="create-dragon" className={styles.link}>
+            Cadastrar
+          </Link>
         </li>
         <li>
-          <Link className={styles.link}>Ver dragões</Link>
+          <Link to="list-dragons" className={styles.link}>
+            Ver dragões
+          </Link>
         </li>
         <li>
           <button className={styles.logoutButton} onClick={onClick}>
