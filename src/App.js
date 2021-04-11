@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from 'assets/components'
+import Router from 'routes'
 
 function App() {
-  return <Button>My app</Button>
+  return <Router />
 }
 
 export default App
