@@ -1,0 +1,18 @@
+@import '../../styles/colors.scss';
+@import '../../styles/others.scss';
+@import '../../styles/spacing.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  box-shadow: map-get($others, 'box-shadow');
+  padding: map-get($spacing, 'small');
+  .dark-theme & {
+    background-color: map-get($colors, 'surface-dark');
+  }
+  .light-theme & {
+    background-color: map-get($colors, 'surface-light');
+  }
+}

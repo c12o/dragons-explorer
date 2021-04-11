@@ -1,3 +1,5 @@
+@import '../../styles/colors.scss';
+
 .menu {
   position: absolute;
   top: 0;
@@ -8,9 +10,20 @@
   display: grid;
   place-items: center;
   grid-template-rows: 40px 1fr;
+  z-index: 20;
+  background-color: map-get($colors, 'surface-light');
+
 
   & > button {
     justify-self: flex-end;
     max-width: 100px;
+  }
+
+  .dark-theme & {
+    background-color: map-get($colors, 'surface-dark');
+  }
+
+  .light-theme & {
+    background-color: map-get($colors, 'surface-light');
   }
 }
