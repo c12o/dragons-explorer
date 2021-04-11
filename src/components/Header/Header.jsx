@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, NavBar, Switch as ThemeSwitch, Logo } from 'components'
 import { useIsMobile } from 'helpers'
 import styles from './Header.module.scss'
@@ -9,7 +10,9 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <Logo />
+      <Link to="/home">
+        <Logo />
+      </Link>
       <ThemeSwitch />
       {renderNavigation}
     </header>

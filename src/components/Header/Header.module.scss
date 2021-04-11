@@ -12,4 +12,7 @@
   background-color: var(--surface-color);
   color: var(--title-color);
   transition: map-get($others, 'fast-transition');
+  & > a {
+    text-decoration: none;
+  }
 }
