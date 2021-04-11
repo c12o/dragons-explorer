@@ -1,0 +1,82 @@
+@import '../../styles/colors.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+
+.inputContainer {
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 60px;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  text-transform: initial;
+  pointer-events: none;
+  bottom: 8px;
+  left: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all map-get($others, 'fast-transition');
+
+  .dark-theme & {
+    color: map-get($colors, 'text-on-dark');
+  }
+
+  .light-theme & {
+    color: map-get($colors, 'text-on-light');
+  }
+}
+
+.input {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: map-get($colors, 'primary');
+  border-radius: map-get($others, 'border-radius');
+  padding: 0.8rem;
+  color: map-get($colors, 'primary-dark');
+  font-size: 16px;
+  line-height: 22px;
+  width: 100%;
+  height: 40px;
+  outline: none;
+  align-self: flex-end;
+
+  &:focus,
+  &:valid,
+  &:-internal-autofill-selected {
+    & ~ .label {
+      text-transform: initial;
+      background-color: inherit;
+      bottom: 30px;
+      left: 8px;
+      font-weight: map-get($typography, 'regular');
+      font-size: 14px;
+      pointer-events: unset;
+      padding: 0 4px;
+      background-color: white;
+    }
+  }
+}
+
+.passwordInput {
+  @extend .input;
+  padding-right: 35px;
+}
+
+.iconButton {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  color: map-get($colors, 'primary');
+  background-color: transparent;
+  font-size: 18px;
+  padding: 0.5rem;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}

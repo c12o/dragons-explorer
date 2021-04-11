@@ -1,0 +1,54 @@
+@import '../../styles/colors.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/typography.scss';
+@import '../../styles/others.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid;
+  width: 100%;
+  border-radius: 4px;
+  padding: map-get($spacing, 'xsmall') map-get($spacing, 'medium');
+  transition: all map-get($others, 'fast-transition');
+  font-weight: map-get($typography, 'bold');
+  text-transform: uppercase;
+  max-width: 480px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.outlined {
+  @extend .button;
+  color: map-get($colors, 'primary');
+  border-color: map-get($colors, 'primary');
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    color: map-get($colors, 'primary-dark');
+    border-color: map-get($colors, 'primary-dark');
+  }
+}
+.solid {
+  @extend .button;
+  background-color: map-get($colors, 'primary');
+  border-color: map-get($colors, 'primary');
+
+  &:hover:not(:disabled) {
+    background-color: map-get($colors, 'primary-dark');
+    border-color: map-get($colors, 'primary-dark');
+  }
+
+  .dark-theme & {
+    color: map-get($colors, 'background-dark');
+  }
+
+  .light-theme & {
+    color: map-get($colors, 'background-light');
+  }
+}

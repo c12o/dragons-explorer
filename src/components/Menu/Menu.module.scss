@@ -1,0 +1,29 @@
+@import '../../styles/colors.scss';
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 40px 1fr;
+  z-index: 20;
+  background-color: map-get($colors, 'surface-light');
+
+
+  & > button {
+    justify-self: flex-end;
+    max-width: 100px;
+  }
+
+  .dark-theme & {
+    background-color: map-get($colors, 'surface-dark');
+  }
+
+  .light-theme & {
+    background-color: map-get($colors, 'surface-light');
+  }
+}
