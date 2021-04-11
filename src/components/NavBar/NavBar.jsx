@@ -2,8 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styles from './NavBar.module.scss'
+import { useSession } from 'context'
 
-function NavBar({ onClick }) {
+function NavBar() {
+  const { logout } = useSession()
+
   return (
     <nav className={styles.navBar} aria-hidden="true">
       <ul>
@@ -18,7 +21,7 @@ function NavBar({ onClick }) {
           </Link>
         </li>
         <li>
-          <button className={styles.logoutButton} onClick={onClick}>
+          <button className={styles.logoutButton} onClick={() => logout()}>
             Sair
           </button>
         </li>
