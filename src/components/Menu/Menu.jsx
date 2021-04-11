@@ -12,11 +12,19 @@ function Menu() {
 
   return isOpen ? (
     <menu className={styles.menu} aria-hidden={isOpen}>
-      <IconButton onClick={() => handleOpen()} icon={<Close size="50" />} />
+      <IconButton
+        onClick={() => handleOpen()}
+        icon={<Close size="50" />}
+        tooltipMessage="Fechar menu"
+      />
       <NavBar />
     </menu>
   ) : (
-    <IconButton onClick={() => handleOpen()} icon={<MenuIcon size="30" />} />
+    <IconButton
+      onClick={() => handleOpen()}
+      icon={<MenuIcon size="30" />}
+      tooltipMessage="Abrir menu"
+    />
   )
 }
 

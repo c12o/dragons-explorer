@@ -12,9 +12,21 @@ function ListItem({ direction, dragon }) {
       <Fire size="40" />
       <p className={styles.dragonName}>{dragon.name}</p>
       <div className={styles.buttonsWrapper}>
-        <IconButton icon={<Info size={ICON_SIZE} />} onClick={() => {}} />
-        <IconButton icon={<Edit size={ICON_SIZE} />} onClick={() => {}} />
-        <IconButton icon={<Delete size={ICON_SIZE} />} onClick={() => {}} />
+        <IconButton
+          icon={<Info size={ICON_SIZE} />}
+          tooltipMessage="Ver detalhes"
+          onClick={() => {}}
+        />
+        <IconButton
+          icon={<Edit size={ICON_SIZE} />}
+          tooltipMessage="Editar dragão"
+          onClick={() => {}}
+        />
+        <IconButton
+          icon={<Delete size={ICON_SIZE} />}
+          tooltipMessage="Remover dragão"
+          onClick={() => {}}
+        />
       </div>
     </div>
   )

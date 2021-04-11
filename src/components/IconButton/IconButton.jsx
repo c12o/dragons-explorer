@@ -2,9 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './IconButton.module.scss'
 
-function IconButton({ icon, onClick }) {
+function IconButton({ icon, onClick, tooltipMessage }) {
   return (
-    <button onClick={onClick} className={styles.iconButton}>
+    <button
+      onClick={onClick}
+      className={styles.iconButton}
+      aria-label={tooltipMessage || undefined}
+    >
       {icon}
     </button>
   )
@@ -12,7 +16,8 @@ function IconButton({ icon, onClick }) {
 
 IconButton.propTypes = {
   icon: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  tooltipMessage: PropTypes.string
 }
 
 export default IconButton
