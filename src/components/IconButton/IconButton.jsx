@@ -7,7 +7,7 @@ function IconButton({ icon, onClick, tooltipMessage }) {
     <button
       onClick={onClick}
       className={styles.iconButton}
-      aria-label={tooltipMessage || undefined}
+      aria-label={tooltipMessage}
     >
       {icon}
     </button>

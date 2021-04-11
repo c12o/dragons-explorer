@@ -16,5 +16,6 @@ export const Basic = (args) => <IconButton {...args} />
 
 Basic.args = {
   icon: <LightMode size="20" />,
-  onClick: () => {}
+  onClick: () => {},
+  tooltipMessage: 'Alterar para tema claro'
 }
