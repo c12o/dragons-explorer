@@ -9,10 +9,7 @@
   z-index: 10;
   box-shadow: map-get($others, 'box-shadow');
   padding: map-get($spacing, 'small');
-  .dark-theme & {
-    background-color: map-get($colors, 'surface-dark');
-  }
-  .light-theme & {
-    background-color: map-get($colors, 'surface-light');
-  }
+  background-color: var(--surface-color);
+  color: var(--title-color);
+  transition: map-get($others, 'fast-transition');
 }

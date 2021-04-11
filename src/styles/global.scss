@@ -1,3 +1,6 @@
+@import './colors.scss';
+@import './others.scss';
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -42,4 +45,19 @@ body {
 
 body {
   font-size: 1.6rem;
+  transition: background map-get($others, 'fast-transition');
+  .light-theme & {
+    background: #f2f2f2;
+    --background-color: #f2f2f2;
+    --surface-color: #ffffff;
+    --title-color: #202124;
+    --text-color: #5f6368;
+  }
+  .dark-theme & {
+    background: #121212;
+    --background-color: #121212;
+    --surface-color: #333333;
+    --title-color: #fafafa;
+    --text-color: #cccccc;
+  }
 }

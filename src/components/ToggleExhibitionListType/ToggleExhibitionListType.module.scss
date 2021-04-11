@@ -26,7 +26,7 @@
     }
     &:checked {
       & + label {
-        color: map-get($colors, 'background-light');
+        color: var(--background-color);
         background-color: map-get($colors, 'primary');
       }
     }

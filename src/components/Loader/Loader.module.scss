@@ -44,12 +44,7 @@
     }
 
     &.regular {
-      .dark-theme & {
-        stroke: map-get($colors, 'surface-dark');
-      }
-      .light-theme & {
-        stroke: map-get($colors, 'surface-light');
-      }
+      stroke: var(--surface-color);
     }
   }
 }

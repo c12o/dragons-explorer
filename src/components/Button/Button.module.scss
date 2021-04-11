@@ -37,17 +37,10 @@
   @include button-styles;
   background-color: map-get($colors, 'primary');
   border-color: map-get($colors, 'primary');
+  color: var(--background-color);
 
   &:hover:not(:disabled) {
     background-color: map-get($colors, 'primary-dark');
     border-color: map-get($colors, 'primary-dark');
-  }
-
-  .dark-theme & {
-    color: map-get($colors, 'background-dark');
-  }
-
-  .light-theme & {
-    color: map-get($colors, 'background-light');
   }
 }

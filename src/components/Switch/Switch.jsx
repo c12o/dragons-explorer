@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import styles from './Switch.module.scss'
 import { DarkMode, LightMode } from 'assets/icons'
+import { useSession } from 'context'
 
 function Switch() {
-  const [isChecked, setChecked] = useState(false)
+  const { handleTheme, theme } = useSession()
+  const [isChecked, setChecked] = useState(theme === 'dark')
   const switchClasses = `${styles.switch} ${styles.switchTrack}`
+
+  const toggleTheme = () => {
+    const themeSelected = isChecked ? 'light' : 'dark'
+    handleTheme(themeSelected)
+    setChecked(!isChecked)
+  }
 
   return (
     <div className={styles.switchContainer}>
@@ -14,10 +22,11 @@ function Switch() {
       />
       <div>
         <input
-          onClick={() => setChecked(!isChecked)}
+          onChange={toggleTheme}
           id="switch-input"
           className={switchClasses}
           type="checkbox"
+          checked={isChecked}
         />
         <label htmlFor="switch-input" />
       </div>
