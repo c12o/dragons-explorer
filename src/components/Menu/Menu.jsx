@@ -6,7 +6,7 @@ import IconButton from 'components/IconButton/IconButton'
 import { Close, Menu as MenuIcon } from 'assets/icons'
 
 function Menu() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = () => setIsOpen(!isOpen)
 
