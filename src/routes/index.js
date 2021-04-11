@@ -6,12 +6,11 @@ import { useSession } from 'context'
 
 export default function Router() {
   const { user } = useSession()
-  console.log(user)
   return (
     <BrowserRouter>
       <Switch>{user ? <PrivateRoutes /> : <PublicRoutes />}</Switch>
       <Route path="*" exact>
-        <Redirect to="/" />
+        <Redirect to="/home" />
       </Route>
     </BrowserRouter>
   )

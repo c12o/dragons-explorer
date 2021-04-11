@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import pages from 'pages'
+import { Home } from 'pages'
 import { Header } from 'components'
 
 export default function PrivateRoutes() {
@@ -8,7 +8,7 @@ export default function PrivateRoutes() {
     <>
       <Header />
       <Route path="/home" exact>
-        <h1>authenticated page</h1>
+        <Home />
       </Route>
       {/* <Route path="/auth" exact>
         <pages.Auth />

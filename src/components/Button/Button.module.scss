@@ -10,9 +10,8 @@
   cursor: pointer;
   appearance: none;
   border: 2px solid;
-  width: 100%;
   border-radius: 4px;
-  padding: map-get($spacing, 'xsmall') map-get($spacing, 'medium');
+  padding: map-get($spacing, 'xsmall') map-get($spacing, 'small');
   transition: all map-get($others, 'fast-transition');
   font-weight: map-get($typography, 'bold');
   max-width: 480px;
