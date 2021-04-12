@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  height: calc(100vh - 75px);
   padding: map-get($spacing, 'medium');
   & > article {
     display: flex;
