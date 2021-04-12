@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from 'react'
 
-const LARGE_MOBILE_BREAKPOINT = '425' // valor em pixels
+const LARGE_MOBILE_BREAKPOINT = '768' // valor em pixels
 
 const useWindowSize = () => {
   const [size, setSize] = useState([0, 0])
@@ -18,5 +18,5 @@ const useWindowSize = () => {
 
 export const useIsMobile = () => {
   const [width] = useWindowSize()
-  return width < LARGE_MOBILE_BREAKPOINT
+  return width <= LARGE_MOBILE_BREAKPOINT
 }

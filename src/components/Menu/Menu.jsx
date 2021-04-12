@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import styles from './Menu.module.scss'
 import { NavBar } from 'components'
 import { IconButton } from 'components'
 import { Close, Menu as MenuIcon } from 'assets/icons'
+import styles from './Menu.module.scss'
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false)
-
   const handleOpen = () => setIsOpen(!isOpen)
 
   return isOpen ? (
@@ -16,7 +15,7 @@ function Menu() {
         icon={<Close size="50" />}
         tooltipMessage="Fechar menu"
       />
-      <NavBar />
+      <NavBar onClick={() => setIsOpen(false)} />
     </menu>
   ) : (
     <IconButton

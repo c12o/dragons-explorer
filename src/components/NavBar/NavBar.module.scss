@@ -45,10 +45,11 @@
       }
     }
 
-    @media screen and (min-width: map-get($breakpoints, 'mobile')) {
+    @media screen and (min-width: map-get($breakpoints, 'tablet')) {
       & {
         flex-direction: row;
         min-height: unset;
+        min-width: 350px;
       }
     }
   }

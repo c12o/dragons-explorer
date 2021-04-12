@@ -37,7 +37,7 @@
     }
   }
 
-  @media screen and (min-width: map-get($breakpoints, 'desktop')) {
+  @media screen and (min-width: map-get($breakpoints, 'tablet')) {
     & > article {
       align-items: center;
       & > h2 {

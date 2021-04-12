@@ -6,6 +6,7 @@ import styles from './Header.module.scss'
 
 function Header() {
   const isMobile = useIsMobile()
+  console.log(isMobile)
   const renderNavigation = isMobile ? <Menu /> : <NavBar />
 
   return (
