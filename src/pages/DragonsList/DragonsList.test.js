@@ -7,7 +7,7 @@ import DragonsList from '.'
 const renderWithRouter = (children) =>
   render(<BrowserRouter>{children}</BrowserRouter>)
 
-describe('Button', () => {
+describe('DragonsList', () => {
   test('should have render the list with card aspect', () => {
     renderWithRouter(<DragonsList />)
     expect(screen.getByRole('list')).toHaveClass('column')
