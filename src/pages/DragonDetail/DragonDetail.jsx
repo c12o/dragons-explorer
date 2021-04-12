@@ -84,7 +84,7 @@ function DragonDetail({ match }) {
           required
         />
         <Input
-          value={dragon && formatDate(dragon.createdAt || 'huasihdiasu')}
+          value={dragon && formatDate(dragon.createdAt)}
           placeholder="Data de criação"
           disabled
         />
