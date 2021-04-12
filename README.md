@@ -3,6 +3,8 @@ Solução do desafio proposto pelo **Sicredi**
 
 ## :dart: Objetivo
 Permitir que um usuário possa administrar seus dragões através de operações **CRUD**
+<br/>
+<br/>
 
 ## :wrench: Tecnologias | Ferramentas
 * :computer: [React](https://pt-br.reactjs.org/) - Criação de interfaces
@@ -14,7 +16,8 @@ Permitir que um usuário possa administrar seus dragões através de operações
 
 
 Foi utilizado também o [Gitmoji](https://gitmoji.dev/) para padronização dos commits onde cada emoji representa o objetivo da implementação.
-
+<br/>
+<br/>
 ## :bulb: Solução
 A implementação foi feita seguindo o conceito *Mobile First* onde a aplicação se adequa ao Desktop e não o contrário. 
 <br/>Foi utilizada a [Context API](https://pt-br.reactjs.org/docs/context.html) para o controle de sessão do usuário e definição do tema escolhido.
@@ -41,7 +44,8 @@ Utilize os dados abaixo para acessar a aplicação
 <br />
 **Usuário**: mhysa
 <br />**Senha**: dracarys
-
+<br/>
+<br/>
 ## :sparkles: Melhorias
 Segue relação de possíveis melhorias que foram identificadas ao término da resolução
 * :bangbang: Escrever testes mais testes para componentes/páginas
