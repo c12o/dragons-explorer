@@ -5,7 +5,7 @@ import { useSession } from 'context'
 
 function Switch() {
   const { handleTheme, theme } = useSession()
-  const [isChecked, setChecked] = useState(theme === 'dark')
+  const [isChecked, setChecked] = useState(!(theme === 'light'))
   const switchClasses = `${styles.switch} ${styles.switchTrack}`
 
   const toggleTheme = () => {
