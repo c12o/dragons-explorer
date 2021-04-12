@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import { Home, DragonsList, DragonDetail } from 'pages'
+import { Route, Redirect } from 'react-router-dom'
+import { Home, DragonsList, DragonDetail, CreateDragon } from 'pages'
 import { Header } from 'components'
 
 export default function PrivateRoutes() {
@@ -10,12 +10,10 @@ export default function PrivateRoutes() {
       <Route path="/home" exact component={Home} />
       <Route path="/list-dragons" exact component={DragonsList} />
       <Route path="/dragon/:id" exact component={DragonDetail} />
-      {/* <Route path="/auth" exact>
-        <pages.Auth />
+      <Route path="/create-dragon" exact component={CreateDragon} />
+      <Route path="*" exact>
+        <Redirect to="/home" />
       </Route>
-      <Route path="/vote" exact>
-        <pages.Vote />
-      </Route> */}
     </>
   )
 }
