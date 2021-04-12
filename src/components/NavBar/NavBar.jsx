@@ -4,19 +4,19 @@ import PropTypes from 'prop-types'
 import styles from './NavBar.module.scss'
 import { useSession } from 'context'
 
-function NavBar() {
+function NavBar({ onClick }) {
   const { logout } = useSession()
 
   return (
     <nav className={styles.navBar} aria-hidden="true">
       <ul>
         <li>
-          <Link to="/create-dragon" className={styles.link}>
+          <Link onClick={onClick} to="/create-dragon" className={styles.link}>
             Cadastrar
           </Link>
         </li>
         <li>
-          <Link to="/list-dragons" className={styles.link}>
+          <Link onClick={onClick} to="/list-dragons" className={styles.link}>
             Ver dragões
           </Link>
         </li>
@@ -31,7 +31,7 @@ function NavBar() {
 }
 
 NavBar.propTypes = {
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 }
 
 export default NavBar

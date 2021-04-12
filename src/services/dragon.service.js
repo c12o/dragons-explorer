@@ -20,9 +20,7 @@ export class DragonService {
   }
 
   async updateDragon(payload) {
-    console.log('here')
     const { id, ...updatedData } = payload
-    console.log(id, updatedData)
     return this.http.put(id, updatedData)
   }
 

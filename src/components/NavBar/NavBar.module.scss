@@ -1,10 +1,9 @@
 @import '../../styles/colors.scss';
 @import '../../styles/typography.scss';
-@import '../../styles/others.scss';
 @import '../../styles/breakpoints.scss';
 
 .navBar {
-  flex: 0.75;
+  flex: 0.5;
   & > ul {
     display: flex;
     align-items: center;
@@ -46,10 +45,11 @@
       }
     }
 
-    @media screen and (min-width: map-get($breakpoints, 'mobile')) {
+    @media screen and (min-width: map-get($breakpoints, 'tablet')) {
       & {
         flex-direction: row;
         min-height: unset;
+        min-width: 350px;
       }
     }
   }

@@ -1,6 +1,7 @@
 @import '../../styles/breakpoints.scss';
 @import '../../styles/colors.scss';
 @import '../../styles/others.scss';
+@import '../../styles/typography.scss';
 
 .iconButton {
   position: relative;
@@ -43,6 +44,7 @@
       border-radius: map-get($others, 'border-radius');
       content: attr(aria-label);
       color: var(--surface-color);
+      font-weight: map-get($typography, 'bold');
       padding: 1rem;
       white-space: nowrap;
       z-index: 20;
