@@ -11,13 +11,7 @@
   & > svg {
     transition: all map-get($others, 'fast-transition');
     &.inactive {
-      &.dark-theme & {
-        color: map-get($colors, 'text-on-dark');
-      }
-
-      &.light-theme & {
-        color: map-get($colors, 'text-on-light');
-      }
+      color: var(--text-color);
     }
 
     &.active {

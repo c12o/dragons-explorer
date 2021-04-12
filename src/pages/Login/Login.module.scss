@@ -17,10 +17,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: map-get($colors, 'background-dark');
+    background: var(--background-color);
 
     & > h2 {
-      color: map-get($colors, 'title-on-dark');
+      color: var(--title-color);
       padding: map-get($spacing, 'small') 0;
       text-align: center;
       font-size: 1.8rem;

@@ -4,18 +4,34 @@ import { AuthenticationService } from 'services'
 
 const sessionContext = createContext({
   user: null,
+  theme: '',
   login: () => {},
-  logout: () => {}
+  logout: () => {},
+  handleTheme: () => {}
 })
+
+const LOCALSTORAGE_THEME_KEY = '@dragon:theme'
 
 const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null)
+  const [theme, setTheme] = useState()
   const AuthenticationAPI = new AuthenticationService()
 
   useEffect(() => {
     if (!user) {
       const sessionData = AuthenticationAPI.getAuthenticatedUser()
       sessionData && setUser(sessionData)
+    }
+  }, [])
+
+  useEffect(() => {
+    const themeSelected = localStorage.getItem(LOCALSTORAGE_THEME_KEY)
+    if (themeSelected) {
+      handleTheme(themeSelected)
+      setTheme(themeSelected)
+    } else {
+      handleTheme('dark')
+      setTheme(themeSelected)
     }
   }, [])
 
@@ -34,8 +50,19 @@ const SessionProvider = ({ children }) => {
     setUser(null)
   }
 
+  function handleTheme(theme) {
+    const html = document.documentElement
+    html.className = ''
+    html.classList.add(`${theme}-theme`)
+
+    localStorage.setItem(LOCALSTORAGE_THEME_KEY, theme)
+    setTheme(theme)
+  }
+
   return (
-    <sessionContext.Provider value={{ user, login, logout }}>
+    <sessionContext.Provider
+      value={{ user, login, logout, handleTheme, theme }}
+    >
       {children}
     </sessionContext.Provider>
   )

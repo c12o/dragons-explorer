@@ -11,19 +11,11 @@
   place-items: center;
   grid-template-rows: 40px 1fr;
   z-index: 20;
-  background-color: map-get($colors, 'surface-light');
-
+  background-color: var(--surface-color);
+  color: var(--text-color);
 
   & > button {
     justify-self: flex-end;
     max-width: 100px;
-  }
-
-  .dark-theme & {
-    background-color: map-get($colors, 'surface-dark');
-  }
-
-  .light-theme & {
-    background-color: map-get($colors, 'surface-light');
   }
 }

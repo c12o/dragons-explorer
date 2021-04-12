@@ -19,19 +19,9 @@
   left: 8px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: map-get($colors, 'text-on-dark');
-  background-color: map-get($colors, 'background-dark');
+  color: var(--text-color);
+  background-color: var(--background-color);
   transition: all map-get($others, 'fast-transition');
-
-  .dark-theme & {
-    color: map-get($colors, 'text-on-dark');
-    background-color: map-get($colors, 'surface-dark');
-  }
-
-  .light-theme & {
-    color: map-get($colors, 'text-on-light');
-    background-color: map-get($colors, 'surface-light');
-  }
 }
 
 .input {
