@@ -66,7 +66,7 @@ function DragonDetail({ match }) {
 
   return (
     <main className={styles.wrapper}>
-      <h2>Detalhes de um dragão</h2>
+      <h2>Detalhes do dragão</h2>
       <form className={styles.container} onSubmit={onUpdate}>
         <h3>Abaixo segue as informações do seu dragão</h3>
         <Input
