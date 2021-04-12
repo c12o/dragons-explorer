@@ -1,0 +1,50 @@
+@import '../../styles/typography.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/others.scss';
+@import '../../styles/breakpoints.scss';
+
+.wrapper {
+  @include pageStructure;
+  max-width: 1100px;
+  margin: 0 auto;
+  & > h2 {
+    color: var(--title-color);
+    font-size: 3rem;
+    line-height: 110%;
+    font-weight: map-get($typography, 'regular');
+    align-self: center;
+    flex: 0.2;
+  }
+  & > .container {
+    flex: 0.75;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+
+    & > h3 {
+      color: var(--text-color);
+      margin-bottom: map-get($spacing, 'small');
+    }
+
+    & > .backButton {
+      margin: map-get($spacing, 'small');
+      align-self: center;
+      color: map-get($colors, 'primary');
+      font-weight: map-get($typography, 'bold');
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'desktop' )) {
+    & > h2 {
+      color: var(--title-color);
+      font-size: 3.6rem;
+      align-self: flex-start;
+    }
+  }
+}

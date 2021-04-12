@@ -11,12 +11,12 @@ function NavBar() {
     <nav className={styles.navBar} aria-hidden="true">
       <ul>
         <li>
-          <Link to="create-dragon" className={styles.link}>
+          <Link to="/create-dragon" className={styles.link}>
             Cadastrar
           </Link>
         </li>
         <li>
-          <Link to="list-dragons" className={styles.link}>
+          <Link to="/list-dragons" className={styles.link}>
             Ver dragões
           </Link>
         </li>

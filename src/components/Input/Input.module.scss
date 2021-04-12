@@ -40,6 +40,7 @@
 
   &:focus,
   &:valid,
+  &:disabled,
   &:-internal-autofill-selected {
     & ~ .label {
       text-transform: initial;
@@ -51,6 +52,12 @@
       pointer-events: unset;
       padding: 0 4px;
     }
+  }
+
+  &:disabled {
+    color: var(--text-color);
+    cursor: not-allowed;
+    border-color: var(--text-color);
   }
 }
 
