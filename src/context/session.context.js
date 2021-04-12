@@ -14,7 +14,7 @@ const LOCALSTORAGE_THEME_KEY = '@dragon:theme'
 
 const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState()
   const AuthenticationAPI = new AuthenticationService()
 
   useEffect(() => {
@@ -28,6 +28,9 @@ const SessionProvider = ({ children }) => {
     const themeSelected = localStorage.getItem(LOCALSTORAGE_THEME_KEY)
     if (themeSelected) {
       handleTheme(themeSelected)
+      setTheme(themeSelected)
+    } else {
+      handleTheme('dark')
       setTheme(themeSelected)
     }
   }, [])
