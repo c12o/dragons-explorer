@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Button.module.scss'
 
-function Button({ children, type, onClick, disabled, variant }) {
+function Button({ children, type, onClick, disabled, variant, ...props }) {
   return (
     <button
       className={styles[variant]}
       disabled={disabled}
       type={type}
       onClick={onClick}
+      {...props}
     >
       {children}
     </button>
