@@ -21,6 +21,20 @@ A implementação foi feita seguindo o conceito *Mobile First* onde a aplicaçã
 <br/>Foi utilizada a lib [Axios](https://github.com/axios/axios) para requisições *HTTP* 
 
 ### :arrow_forward: Execução 
+Após o download do projeto, você deve ir na pasta raiz do mesmo e executar o comando abaixo
+<br />
+`yarn`
+ou
+`npm install` para baixar as dependências necessárias
+
+#### Rodando o projeto
+Para rodar o projeto basta executar o comando `yarn start` ou `npm run start`
+
+#### Rodando o storybook
+Para rodar o storybook e ver os componentes isoladamente, basta executar o comando `yarn storybook` ou `npm run storybook`
+
+#### Rodando os testes
+Para rodar os testes basta executar o comando `yarn test` ou `npm run test`
 
 ### :passport_control: Credenciais
 Utilize os dados abaixo para acessar a aplicação
@@ -28,3 +42,9 @@ Utilize os dados abaixo para acessar a aplicação
 **Usuário**: mhysa
 <br />**Senha**: dracarys
 
+## :sparkles: Melhorias
+Segue relação de possíveis melhorias que foram identificadas ao término da resolução
+* :bangbang: Escrever testes mais testes para componentes/páginas
+* :bangbang: Ajustes visando a acessibilidade
+* :heavy_exclamation_mark: Refactor de componentes. Algumas implementaçãoes foram baseadas em casos específicos
+* :heavy_exclamation_mark: Opção para permanecer logado
