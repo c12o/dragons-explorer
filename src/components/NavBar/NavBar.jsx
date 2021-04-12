@@ -2,19 +2,26 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styles from './NavBar.module.scss'
+import { useSession } from 'context'
 
-function NavBar({ onClick }) {
+function NavBar() {
+  const { logout } = useSession()
+
   return (
     <nav className={styles.navBar} aria-hidden="true">
       <ul>
         <li>
-          <Link className={styles.link}>Cadastrar</Link>
+          <Link to="create-dragon" className={styles.link}>
+            Cadastrar
+          </Link>
         </li>
         <li>
-          <Link className={styles.link}>Ver dragões</Link>
+          <Link to="list-dragons" className={styles.link}>
+            Ver dragões
+          </Link>
         </li>
         <li>
-          <button className={styles.logoutButton} onClick={onClick}>
+          <button className={styles.logoutButton} onClick={() => logout()}>
             Sair
           </button>
         </li>

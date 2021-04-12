@@ -23,8 +23,9 @@ const SessionProvider = ({ children }) => {
     try {
       const loginData = AuthenticationAPI.login(payload)
       setUser(loginData)
+      return { success: true }
     } catch (error) {
-      return error
+      return { success: false, message: error.message }
     }
   }
 

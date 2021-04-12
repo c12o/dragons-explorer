@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import styles from './Menu.module.scss'
 import { NavBar } from 'components'
 import { IconButton } from 'components'

@@ -6,8 +6,9 @@
   display: inline-flex;
   position: relative;
   box-sizing: border-box;
-  min-height: 60px;
+  height: 60px;
   overflow: hidden;
+  width: 100%;
 }
 
 .label {
@@ -18,14 +19,18 @@
   left: 8px;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: map-get($colors, 'text-on-dark');
+  background-color: map-get($colors, 'background-dark');
   transition: all map-get($others, 'fast-transition');
 
   .dark-theme & {
     color: map-get($colors, 'text-on-dark');
+    background-color: map-get($colors, 'surface-dark');
   }
 
   .light-theme & {
     color: map-get($colors, 'text-on-light');
+    background-color: map-get($colors, 'surface-light');
   }
 }
 
@@ -48,14 +53,13 @@
   &:-internal-autofill-selected {
     & ~ .label {
       text-transform: initial;
-      background-color: inherit;
       bottom: 30px;
       left: 8px;
+      color: map-get($colors, 'primary');
       font-weight: map-get($typography, 'regular');
       font-size: 14px;
       pointer-events: unset;
       padding: 0 4px;
-      background-color: white;
     }
   }
 }
@@ -78,5 +82,5 @@
   text-align: center;
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 22px;
 }
