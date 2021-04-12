@@ -1,13 +1,19 @@
 @import '../../styles/typography.scss';
 @import '../../styles/others.scss';
+@import '../../styles/breakpoints.scss';
 
 @mixin wrapper {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: var(--surface-color);
+  transition: map-get($others, 'fast-transition');
+  transition-property: backgroud-color, border, color;
+
   > .dragonName {
     font-size: 2rem;
     font-weight: map-get($typography, 'bold');
+    color: var(--title-color);
   }
   > .buttonsWrapper {
     display: flex;
@@ -18,7 +24,6 @@
 
 .row {
   @include wrapper;
-  max-width: 1000px;
   > .dragonName {
     flex: 1;
     padding-left: 8px;
@@ -26,6 +31,12 @@
   > .buttonsWrapper {
     flex: 0.5;
     max-width: 120px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'desktop' )) {
+    & > .buttonsWrapper {
+      margin-right: 50px;
+    }
   }
 }
 

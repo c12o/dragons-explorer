@@ -9,9 +9,9 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Switch>{user ? <PrivateRoutes /> : <PublicRoutes />}</Switch>
-      <Route path="*" exact>
-        <Redirect to="/home" />
-      </Route>
+      {/* <Route path="*" exact>
+        <Redirect to={user ? '/home' : '/'} />
+      </Route> */}
     </BrowserRouter>
   )
 }

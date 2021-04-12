@@ -1,0 +1,60 @@
+@import '../../styles/typography.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/others.scss';
+@import '../../styles/breakpoints.scss';
+
+.wrapper {
+  @include pageStructure;
+  max-width: 1100px;
+  margin: 0 auto;
+  & > .pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: map-get($spacing, 'medium');
+    padding: map-get($spacing, 'small');
+    & > h2 {
+      color: var(--title-color);
+      font-size: 3.6rem;
+      line-height: 110%;
+      font-weight: map-get($typography, 'regular');
+    }
+  }
+
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: hidden auto;
+    justify-content: center;
+    & > li {
+      list-style: none;
+      & > div {
+        margin: map-get($spacing, 'small');
+      }
+    }
+    &.row {
+      display: unset;
+      flex-direction: column;
+      width: 100%;
+      & > li {
+        & > div {
+          margin: 0;
+          padding: map-get($spacing, 'small');
+        }
+        & + li {
+          & > div {
+            border-top: 2px solid var(--background-color);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, 'desktop' )) {
+    & > .pageHeader {
+      padding: map-get($spacing, 'small') 0;
+    }
+  }
+}

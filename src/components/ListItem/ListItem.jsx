@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ListItem.module.scss'
-import { Fire, Delete, Edit, Info } from 'assets/icons'
+import { useHistory } from 'react-router-dom'
 import { IconButton } from 'components'
+import { Fire, Delete, Info } from 'assets/icons'
+import styles from './ListItem.module.scss'
 
 const ICON_SIZE = '30'
 
-function ListItem({ direction, dragon }) {
+function ListItem({ direction, dragon, onDelete }) {
+  const history = useHistory()
   return (
     <div key={dragon.id} className={styles[direction]}>
       <Fire size="40" />
@@ -15,12 +17,14 @@ function ListItem({ direction, dragon }) {
         <IconButton
           icon={<Info size={ICON_SIZE} />}
           tooltipMessage="Ver detalhes"
-          onClick={() => {}}
+          onClick={() => {
+            history.push(`dragon/${dragon.id}`)
+          }}
         />
         <IconButton
           icon={<Delete size={ICON_SIZE} />}
           tooltipMessage="Remover dragão"
-          onClick={() => {}}
+          onClick={() => onDelete(dragon.id)}
         />
       </div>
     </div>
@@ -32,7 +36,8 @@ ListItem.propTypes = {
   dragon: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  onDelete: PropTypes.func.isRequired
 }
 
 ListItem.defaultProps = {
