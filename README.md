@@ -64,3 +64,4 @@ Segue relação de possíveis melhorias que foram identificadas ao término da r
 - :bangbang: Ajustes visando a acessibilidade
 - :heavy_exclamation_mark: Refactor de componentes. Algumas implementaçãoes foram baseadas em casos específicos
 - :heavy_exclamation_mark: Opção para permanecer logado
+- :heavy_exclamation_mark: Limitar o comprimento máximo da tela, para não esticar em telas grandes
