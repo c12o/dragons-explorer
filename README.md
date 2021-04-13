@@ -62,6 +62,7 @@ Segue relação de possíveis melhorias que foram identificadas ao término da r
 
 - :bangbang: Escrever testes mais testes para componentes/páginas
 - :bangbang: Ajustes visando a acessibilidade
+- :bangbang: Permitir ao usuário desfazer a exclusão de um dragão
 - :heavy_exclamation_mark: Refactor de componentes. Algumas implementaçãoes foram baseadas em casos específicos
 - :heavy_exclamation_mark: Opção para permanecer logado
 - :heavy_exclamation_mark: Limitar o comprimento máximo da tela, para não esticar em telas grandes
